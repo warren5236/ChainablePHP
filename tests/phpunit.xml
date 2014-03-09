@@ -1,0 +1,12 @@
+<phpunit
+    colors="true"
+    convertErrorsToExceptions="true"
+    strict="false"
+    verbose="false"
+    bootstrap="Bootstrap.php">
+    <testsuites>
+        <testsuite name="Objects">
+            <directory>Objects</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
