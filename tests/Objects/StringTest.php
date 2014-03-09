@@ -23,4 +23,12 @@ class StringTest extends PHPUnit_Framework_TestCase{
         $this->assertSame(0, $string->indexOf('asdf'));
         $this->assertSame(5, $string->indexOf('foo'));
     }
+
+    public function testSubstring(){
+        $input = 'asdf foo';
+        $string = new String($input);
+
+        $this->assertEquals('foo', $string->substring(5));
+        $this->assertEquals('asdf', $string->substring(0,4));
+    }
 }

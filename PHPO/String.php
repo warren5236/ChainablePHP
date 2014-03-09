@@ -32,4 +32,18 @@ class String
 
         return $returnVal;
     }
+
+    public function substring(){
+        $args = func_get_args();
+
+        $returnVal = '';
+
+        if(count($args) == 1){
+            $returnVal = substr($this->value, $args[0]);
+        } elseif (count($args) == 2){
+            $returnVal = substr($this->value, $args[0], $args[1]);
+        }
+
+        return new String($returnVal);
+    }
 }
