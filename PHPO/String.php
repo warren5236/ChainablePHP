@@ -22,4 +22,14 @@ class String
     public function getValue(){
         return $this->value;
     }
+
+    public function indexOf($test){
+        $returnVal = stripos($this->value, $test);
+
+        if($returnVal === false){
+            return -1;
+        }
+
+        return $returnVal;
+    }
 }
