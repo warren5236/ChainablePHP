@@ -31,4 +31,10 @@ class StringTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals('foo', $string->substring(5));
         $this->assertEquals('asdf', $string->substring(0,4));
     }
+
+    public function testToLower(){
+        $input = 'ASDF Foo';
+        $string = new String($input);
+        $this->assertEquals('asdf foo', $string->toLower());
+    }
 }

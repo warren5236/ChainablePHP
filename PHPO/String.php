@@ -46,4 +46,8 @@ class String
 
         return new String($returnVal);
     }
+
+    public function toLower(){
+        return new String(strtolower($this->value));
+    }
 }
