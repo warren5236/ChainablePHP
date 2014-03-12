@@ -37,4 +37,10 @@ class StringTest extends PHPUnit_Framework_TestCase{
         $string = new String($input);
         $this->assertEquals('asdf foo', $string->toLower());
     }
+
+    public function testToUpper(){
+        $input = 'ASDF Foo';
+        $string = new String($input);
+        $this->assertEquals('ASDF FOO', $string->toUpper());
+    }
 }

@@ -50,4 +50,8 @@ class String
     public function toLower(){
         return new String(strtolower($this->value));
     }
+
+    public function toUpper(){
+        return new String(strtoupper($this->value));
+    }
 }
