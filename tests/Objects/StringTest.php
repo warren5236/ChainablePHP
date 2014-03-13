@@ -1,6 +1,7 @@
 <?php
 
 use PHPO\String;
+use PHPO\ArrayObject;
 
 class StringTest extends PHPUnit_Framework_TestCase{
     public function testToString(){
@@ -42,5 +43,12 @@ class StringTest extends PHPUnit_Framework_TestCase{
         $input = 'ASDF Foo';
         $string = new String($input);
         $this->assertEquals('ASDF FOO', $string->toUpper());
+    }
+
+    public function testExplode(){
+        $input = 'test test test';
+        $string = new String($input);
+
+        $this->assertEquals(new ArrayObject('test', 'test', 'test'), $string->explode(' '));
     }
 }

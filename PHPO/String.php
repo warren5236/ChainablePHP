@@ -2,6 +2,8 @@
 
 namespace PHPO;
 
+use PHPO\ArrayObject;
+
 class String
 {
     protected $value = null;
@@ -53,5 +55,9 @@ class String
 
     public function toUpper(){
         return new String(strtoupper($this->value));
+    }
+
+    public function explode($delimiter){
+        return new ArrayObject(explode($delimiter, $this->value));
     }
 }
