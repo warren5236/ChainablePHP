@@ -4,7 +4,7 @@ namespace PHPO;
 
 use PHPO\ArrayObject;
 
-class String
+class StringObject
 {
     protected $value = null;
 
@@ -46,15 +46,15 @@ class String
             $returnVal = substr($this->value, $args[0], $args[1]);
         }
 
-        return new String($returnVal);
+        return new StringObject($returnVal);
     }
 
     public function toLower(){
-        return new String(strtolower($this->value));
+        return new StringObject(strtolower($this->value));
     }
 
     public function toUpper(){
-        return new String(strtoupper($this->value));
+        return new StringObject(strtoupper($this->value));
     }
 
     public function explode($delimiter){

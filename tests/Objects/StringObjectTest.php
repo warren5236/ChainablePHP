@@ -1,12 +1,12 @@
 <?php
 
-use PHPO\String;
+use PHPO\StringObject;
 use PHPO\ArrayObject;
 
-class StringTest extends PHPUnit_Framework_TestCase{
+class StringObjectTest extends PHPUnit_Framework_TestCase{
     public function testToString(){
         $string = 'test string';
-        $stringObject = new String($string);
+        $stringObject = new StringObject($string);
 
         $this->assertEquals($string, sprintf('%s', $stringObject));
         $this->assertEquals($string, $stringObject->getValue());
@@ -18,7 +18,7 @@ class StringTest extends PHPUnit_Framework_TestCase{
 
     public function testIndexoOf(){
         $input = 'asdf foo';
-        $string = new String($input);
+        $string = new StringObject($input);
 
         $this->assertSame(-1, $string->indexOf('test'));
         $this->assertSame(0, $string->indexOf('asdf'));
@@ -27,7 +27,7 @@ class StringTest extends PHPUnit_Framework_TestCase{
 
     public function testSubstring(){
         $input = 'asdf foo';
-        $string = new String($input);
+        $string = new StringObject($input);
 
         $this->assertEquals('foo', $string->substring(5));
         $this->assertEquals('asdf', $string->substring(0,4));
@@ -35,19 +35,19 @@ class StringTest extends PHPUnit_Framework_TestCase{
 
     public function testToLower(){
         $input = 'ASDF Foo';
-        $string = new String($input);
+        $string = new StringObject($input);
         $this->assertEquals('asdf foo', $string->toLower());
     }
 
     public function testToUpper(){
         $input = 'ASDF Foo';
-        $string = new String($input);
+        $string = new StringObject($input);
         $this->assertEquals('ASDF FOO', $string->toUpper());
     }
 
     public function testExplode(){
         $input = 'test test test';
-        $string = new String($input);
+        $string = new StringObject($input);
 
         $this->assertEquals(new ArrayObject('test', 'test', 'test'), $string->explode(' '));
     }
