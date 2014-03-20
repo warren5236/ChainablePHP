@@ -20,4 +20,15 @@ class ArrayObjectTest extends PHPUnit_Framework_TestCase{
             $count++;
         }
     }
+
+    public function testPush(){
+        $array = new ArrayObject();
+        $this->assertSame(0, $array->getLength());
+
+        $array->push('test1');
+        $this->assertSame(1, $array->getLength());
+
+        $array->push('test2');
+        $this->assertSame(2, $array->getLength());
+    }
 }

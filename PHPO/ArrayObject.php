@@ -31,6 +31,15 @@ class ArrayObject implements \Iterator
         return $this->value;
     }
 
+    public function getLength(){
+        return count($this->value);
+    }
+
+    public function push($element){
+        $this->value[] = $element;
+        return $this;
+    }
+
     public function rewind()
     {
         reset($this->value);
