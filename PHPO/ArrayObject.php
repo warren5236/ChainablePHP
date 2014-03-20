@@ -2,7 +2,7 @@
 
 namespace PHPO;
 
-class ArrayObject
+class ArrayObject implements \Iterator
 {
     protected $value = array();
 
@@ -20,6 +20,39 @@ class ArrayObject
                 }
             }
         }
+    }
+
+    public function setValue($value){
+        $this->value = $value;
+        return $this;
+    }
+
+    public function getValue(){
+        return $this->value;
+    }
+
+    public function rewind()
+    {
+        reset($this->value);
+    }
+
+    public function current()
+    {
+        return current($this->value);
+    }
+
+    public function key()
+    {
+        key($this->value);
+    }
+
+    public function next(){
+        return next($this->value);
+    }
+
+    public function valid(){
+        $key = key($this->value);
+        return ($key !== NULL && $key !== false);
     }
 
     public function join($delimiter = ' '){
