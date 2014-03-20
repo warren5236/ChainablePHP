@@ -21,4 +21,8 @@ class ArrayObject
             }
         }
     }
+
+    public function join($delimiter = ' '){
+        return new StringObject(implode($delimiter, $this->value));
+    }
 }
