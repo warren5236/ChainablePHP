@@ -2,7 +2,7 @@
 
 namespace PHPO;
 
-class ArrayObject implements \Iterator
+class ArrayObject implements \Iterator, \ArrayAccess
 {
     protected $value = array();
 
@@ -44,6 +44,16 @@ class ArrayObject implements \Iterator
         return array_pop($this->value);
     }
 
+    public function join($delimiter = ' '){
+        return new StringObject(implode($delimiter, $this->value));
+    }
+
+
+
+
+    /*
+    * \Iterator
+    */
     public function rewind()
     {
         reset($this->value);
@@ -68,7 +78,25 @@ class ArrayObject implements \Iterator
         return ($key !== NULL && $key !== false);
     }
 
-    public function join($delimiter = ' '){
-        return new StringObject(implode($delimiter, $this->value));
+    /*
+    * \ArrayAccess
+    */
+    public function offsetSet($offset, $value) {
+        if (is_null($offset)) {
+            $this->value[] = $value;
+        } else {
+            $this->value[$offset] = $value;
+        }
     }
+    public function offsetExists($offset) {
+        return isset($this->value[$offset]);
+    }
+    public function offsetUnset($offset) {
+        unset($this->value[$offset]);
+    }
+    public function offsetGet($offset) {
+        return isset($this->value[$offset]) ? $this->value[$offset] : null;
+    }
+
+
 }

@@ -41,4 +41,14 @@ class ArrayObjectTest extends PHPUnit_Framework_TestCase{
         $this->assertSame(0, $array->getLength());
         $this->assertSame(null, $array->pop());
     }
+
+    public function testKeyAccess(){
+        $array = new ArrayObject();
+        $array['testkey'] = 'testvalue';
+        $this->assertSame('testvalue', $array['testkey']);
+
+        $this->assertTrue(isset($array['testkey']));
+        unset($array['testkey']);
+        $this->assertFalse(isset($array['testkey']));
+    }
 }
