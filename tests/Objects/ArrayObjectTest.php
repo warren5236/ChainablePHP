@@ -31,4 +31,14 @@ class ArrayObjectTest extends PHPUnit_Framework_TestCase{
         $array->push('test2');
         $this->assertSame(2, $array->getLength());
     }
+
+    public function testPop(){
+        $array = new ArrayObject('test1', 'test2');
+        $this->assertSame(2, $array->getLength());
+        $this->assertSame('test2', $array->pop());
+        $this->assertSame(1, $array->getLength());
+        $this->assertSame('test1', $array->pop());
+        $this->assertSame(0, $array->getLength());
+        $this->assertSame(null, $array->pop());
+    }
 }

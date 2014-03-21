@@ -40,6 +40,10 @@ class ArrayObject implements \Iterator
         return $this;
     }
 
+    public function pop(){
+        return array_pop($this->value);
+    }
+
     public function rewind()
     {
         reset($this->value);
