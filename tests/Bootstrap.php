@@ -1,8 +1,2 @@
 <?php
-require_once(getcwd() . '/PHPO/Autoloader/Autoloader.php');
-
-use PHPO\Autoloader\Autoloader;
-
-$autoloader = new Autoloader();
-
-$autoloader->register();
+require_once __DIR__ . '/../vendor/autoload.php';
