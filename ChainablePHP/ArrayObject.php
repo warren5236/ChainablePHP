@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPO;
+namespace ChainablePHP;
 
 class ArrayObject implements \Iterator, \ArrayAccess
 {

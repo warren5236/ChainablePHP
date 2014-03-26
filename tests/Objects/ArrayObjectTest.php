@@ -1,7 +1,7 @@
 <?php
 
-use PHPO\StringObject;
-use PHPO\ArrayObject;
+use ChainablePHP\StringObject;
+use ChainablePHP\ArrayObject;
 
 class ArrayObjectTest extends PHPUnit_Framework_TestCase{
     public function testJoin(){

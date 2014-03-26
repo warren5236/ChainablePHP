@@ -1,6 +1,6 @@
 {
-    "name": "scottkeckwarren/phpo",
-    "description": "Provides a class interface for managing strings and arrays",
+    "name": "scottkeckwarren/ChainablePHP",
+    "description": "Provides a class interface for managing strings and arrays in a chainable fashion",
     "require": {
         "php": ">=5.3.0"
     },
@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "PHPO": "."
+            "ChainablePHP": "."
         }
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
-use PHPO\StringObject;
-use PHPO\ArrayObject;
+use ChainablePHP\StringObject;
+use ChainablePHP\ArrayObject;
 
 class StringObjectTest extends PHPUnit_Framework_TestCase{
     public function testToString(){

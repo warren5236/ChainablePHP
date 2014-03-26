@@ -1,8 +1,8 @@
 <?php
 
-namespace PHPO;
+namespace ChainablePHP;
 
-use PHPO\ArrayObject;
+use ChainablePHP\ArrayObject;
 
 class StringObject
 {
