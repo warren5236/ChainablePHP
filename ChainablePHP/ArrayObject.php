@@ -52,6 +52,11 @@ class ArrayObject implements \Iterator, \ArrayAccess
         return new ArrayObject(array_keys($this->value));
     }
 
+    public function sortByKeys(){
+        ksort($this->value);
+        return $this;
+    }
+
     /*
     * \Iterator
     */

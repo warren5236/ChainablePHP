@@ -60,4 +60,14 @@ class ArrayObjectTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(new ArrayObject('key1', 'key2'), $array->getKeys());
     }
 
+    public function testSortByKeys(){
+        $array = new ArrayObject();
+        $array['key2'] = 'test2';
+        $array['key1'] = 'test1';
+        $this->assertEquals(new ArrayObject('key2', 'key1'), $array->getKeys());
+
+        $array->sortByKeys();
+        $this->assertEquals(new ArrayObject('key1', 'key2'), $array->getKeys());
+    }
+
 }
