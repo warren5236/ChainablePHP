@@ -48,8 +48,9 @@ class ArrayObject implements \Iterator, \ArrayAccess
         return new StringObject(implode($delimiter, $this->value));
     }
 
-
-
+    public function getKeys(){
+        return new ArrayObject(array_keys($this->value));
+    }
 
     /*
     * \Iterator

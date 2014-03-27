@@ -51,4 +51,13 @@ class ArrayObjectTest extends PHPUnit_Framework_TestCase{
         unset($array['testkey']);
         $this->assertFalse(isset($array['testkey']));
     }
+
+    public function testGetKeys(){
+        $array = new ArrayObject();
+        $array['key1'] = 'test1';
+        $array['key2'] = 'test2';
+
+        $this->assertEquals(new ArrayObject('key1', 'key2'), $array->getKeys());
+    }
+
 }
