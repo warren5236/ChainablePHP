@@ -1,4 +1,4 @@
-PHPO
+ChainablePHP
 ====
 
 [![Build Status](https://travis-ci.org/warren5236/ChainablePHP.png?branch=master)](https://travis-ci.org/warren5236/ChainablePHP)
