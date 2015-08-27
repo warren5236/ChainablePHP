@@ -16,13 +16,15 @@ class StringObjectTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($string, $stringObject->getValue());
     }
 
-    public function testIndexoOf(){
-        $input = 'asdf foo';
+    public function testIndexoOf()
+    {
+        $input = 'asdf fooβ';
         $string = new StringObject($input);
 
         $this->assertSame(-1, $string->indexOf('test'));
         $this->assertSame(0, $string->indexOf('asdf'));
         $this->assertSame(5, $string->indexOf('foo'));
+        $this->assertSame(8, $string->indexOf('β'));
     }
 
     public function testSubstring(){

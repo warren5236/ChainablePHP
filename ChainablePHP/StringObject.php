@@ -31,7 +31,7 @@ class StringObject
 
     public function indexOf($test)
     {
-        $returnVal = stripos($this->value, $test);
+        $returnVal = mb_stripos($this->value, $test);
 
         if ($returnVal === false) {
             return -1;
