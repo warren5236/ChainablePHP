@@ -3,8 +3,12 @@
 use ChainablePHP\StringObject;
 use ChainablePHP\ArrayObject;
 
-class StringObjectTest extends PHPUnit_Framework_TestCase{
-    public function testToString(){
+namespace ChainablePHP;
+
+class StringObjectTest extends \PHPUnit_Framework_TestCase
+{
+    public function testToString()
+    {
         $string = 'test string';
         $stringObject = new StringObject($string);
 
@@ -27,27 +31,31 @@ class StringObjectTest extends PHPUnit_Framework_TestCase{
         $this->assertSame(8, $string->indexOf('β'));
     }
 
-    public function testSubstring(){
-        $input = 'asdf foo';
+    public function testSubstring()
+    {
+        $input = 'asdf fooβ';
         $string = new StringObject($input);
 
-        $this->assertEquals('foo', $string->substring(5));
-        $this->assertEquals('asdf', $string->substring(0,4));
+        $this->assertEquals('fooβ', $string->substring(5));
+        $this->assertEquals('asdf', $string->substring(0, 4));
     }
 
-    public function testToLower(){
+    public function testToLower()
+    {
         $input = 'ASDF Foo';
         $string = new StringObject($input);
         $this->assertEquals('asdf foo', $string->toLower());
     }
 
-    public function testToUpper(){
+    public function testToUpper()
+    {
         $input = 'ASDF Foo';
         $string = new StringObject($input);
         $this->assertEquals('ASDF FOO', $string->toUpper());
     }
 
-    public function testExplode(){
+    public function testExplode()
+    {
         $input = 'test test test';
         $string = new StringObject($input);
 
