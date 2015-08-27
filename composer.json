@@ -1,5 +1,5 @@
 {
-    "name": "scottkeckwarren/ChainablePHP",
+    "name": "warren5236/ChainablePHP",
     "description": "Provides a class interface for managing strings and arrays in a chainable fashion",
     "require": {
         "php": ">=5.3.0"
