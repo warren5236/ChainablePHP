@@ -67,6 +67,14 @@ class StringObject
 
     public function explode($delimiter)
     {
-        return new ArrayObject(explode($delimiter, $this->value));
+        $items = explode($delimiter, $this->value);
+
+        $returnVal = new ArrayObject();
+
+        foreach ($items as $item) {
+            $returnVal[] = new StringObject($item);
+        }
+
+        return $returnVal;
     }
 }
