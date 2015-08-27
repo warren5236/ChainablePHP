@@ -23,6 +23,27 @@ class ArrayObject implements \Iterator, \ArrayAccess
         }
     }
 
+    public function __call($name, $arguments)
+    {
+        $keys = $this->getKeys();
+        $values = $this->getValue();
+
+        foreach ($keys as $key) {
+            if (function_exists($name)) {
+                $values[$key] = $name($values[$key]);
+            } elseif (method_exists($values[$key], $name)) {
+                $values[$key] = call_user_func_array(array($values[$key], $name), $arguments);
+            } else {
+                // echo get_class($values[$key]);
+            }
+
+
+            
+        }
+
+        return new ArrayObject($values);
+    }
+
     public function setValue($value)
     {
         $this->value = $value;
